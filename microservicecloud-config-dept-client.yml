@@ -1,0 +1,86 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @zhegcheg Sign out
+0
+0 0 694475668/microservicecloud-config
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
+microservicecloud-config/microservicecloud-config-dept-client.yml
+1ec5349  on 23 Nov 2018
+@694475668 694475668 two new file
+     
+74 lines (64 sloc)  1.69 KB
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8001
+spring:
+  profiles: dev
+  application:
+    name: microservicecloud-config-dept-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/clouddb01
+    username: root
+    password: root
+    dbcp2:
+          min-idle: 5
+          initial-size: 5
+          max-total: 5
+          max-wait-millis: 200
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: dept-8001.com   #自定义服务名称信息
+    prefer-ip-address: true     #访问路径可以显示IP地址
+
+info:
+  app.name: znsd-microservicecloud
+  company.name: www.znsd.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  
+---
+server:
+  port: 8001
+spring:
+  profiles: test
+  application:
+    name: microservicecloud-config-dept-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test01
+    username: root
+    password: root
+    dbcp2:
+          min-idle: 5
+          initial-size: 5
+          max-total: 5
+          max-wait-millis: 200
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: dept-8001.com   #自定义服务名称信息
+    prefer-ip-address: true     #访问路径可以显示IP地址
+
+info:
+  app.name: znsd-microservicecloud
+  company.name: www.znsd.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
