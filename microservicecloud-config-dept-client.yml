@@ -1,20 +1,3 @@
-Skip to content
- 
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- @zhegcheg Sign out
-0
-0 0 694475668/microservicecloud-config
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
-microservicecloud-config/microservicecloud-config-dept-client.yml
-1ec5349  on 23 Nov 2018
-@694475668 694475668 two new file
-     
-74 lines (64 sloc)  1.69 KB
 spring:
   profiles:
     active:
